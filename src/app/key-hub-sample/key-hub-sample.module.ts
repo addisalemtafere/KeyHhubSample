@@ -9,9 +9,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {RouterModule, Routes} from '@angular/router';
 import {KeyHubSampleComponent} from './components/key-hub-sample/key-hub-sample.component';
-import { EmployeeComponent } from './components/employee/employee.component';
-import { EducationLevelComponent } from './components/education-level/education-level.component';
-import { EducationLevelFormComponent } from './components/education-level-form/education-level-form.component';
+import {EmployeeComponent} from './components/employee/employee.component';
+import {EducationLevelComponent} from './components/education-level/education-level.component';
+import {EducationLevelFormComponent} from './components/education-level-form/education-level-form.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -43,10 +44,14 @@ const routes: Routes = [
     EducationLevelComponent,
     EducationLevelFormComponent
   ],
-  exports: [RouterModule,
+  exports: [
+    RouterModule,
     EmployeeComponent,
     EducationLevelComponent,
-    EducationLevelFormComponent]
+    EducationLevelFormComponent],
+  entryComponents: [
+    EducationLevelFormComponent
+  ]
 })
 export class KeyHubSampleModule {
 }

@@ -10,15 +10,14 @@
     </mat-toolbar>
 
 
-
     <!--<a mat-list-item routerLinkActive="active"-->
-       <!--[routerLinkActiveOptions]="{ exact: true }"-->
-       <!--routerLink="/dashboard">-->
-      <!--<mat-icon color="primary" class="mat-18">dashboard</mat-icon>-->
-      <!--My Dashboard-->
+    <!--[routerLinkActiveOptions]="{ exact: true }"-->
+    <!--routerLink="/dashboard">-->
+    <!--<mat-icon color="primary" class="mat-18">dashboard</mat-icon>-->
+    <!--My Dashboard-->
     <!--</a>-->
 
-    <mat-expansion-panel  #profile [class.mat-elevation-z0]="!profile.expanded">
+    <mat-expansion-panel #profile [class.mat-elevation-z0]="!profile.expanded">
       <mat-expansion-panel-header style="font-size: 16px;">
         <mat-panel-title>
           <mat-icon color="primary">reorder</mat-icon>
@@ -32,13 +31,13 @@
         <a mat-list-item
            routerLink="/dashboard">
           <mat-icon class="mat-18">person</mat-icon>
-Profile
+          Profile
         </a>
         <a mat-list-item routerLinkActive="active"
            [routerLinkActiveOptions]="{ exact: true }"
            routerLink="/dashboard">
           <mat-icon class="mat-18">person</mat-icon>
-Profile
+          Profile
         </a>
 
       </mat-list>
@@ -52,10 +51,10 @@ Profile
       <router-outlet></router-outlet>
 
     </div>
+    <app-footer></app-footer>
+
   </div>
 
-
-  <app-footer></app-footer>
 
 </mat-sidenav-container>
 

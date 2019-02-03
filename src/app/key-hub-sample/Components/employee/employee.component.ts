@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {EmployeeService} from '../../services/employee.service';
+import {DepartmentModel} from '../../model/department.model';
 
 @Component({
   selector: 'app-employee',
@@ -8,13 +10,37 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class EmployeeComponent implements OnInit {
 
-  step = 0;
   employeeForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  departments: DepartmentModel[] = [
+    {DepartmentId: 1, DepartmentName: 'IT'},
+    {DepartmentId: 2, DepartmentName: 'Computer Engineering'},
+    {DepartmentId: 3, DepartmentName: 'Software Engineering'},
+  ];
+
+  constructor(private fb: FormBuilder,
+              private employeeService: EmployeeService) {
   }
 
   ngOnInit() {
+    this.initForm();
+  }
+
+
+  initForm() {
+    this.employeeForm = this.fb.group({
+      FirstName: new FormControl(),
+      MiddleName: new FormControl(),
+      FatherName: new FormControl(),
+      DepartmentId: new FormControl()
+    });
+  }
+
+  onSubmit() {
+    this.employeeService.saveEmployee(this.employeeForm.value)
+      .subscribe(data => {
+        alert(data);
+      });
   }
 
   close() {
