@@ -1,0 +1,62 @@
+<mat-sidenav-container class="app-sidenav-container"
+                       [class.dark-theme]="isDarkTheme" [dir]="dir">
+  <mat-sidenav #sidenav
+               class="app-sidenav mat-elevation-z10"
+               [opened]="!isScreenSmall()"
+               [mode]="isScreenSmall() ? 'over' : 'side'">
+
+    <mat-toolbar color="primary">
+      <span>KEY-HUB</span>
+    </mat-toolbar>
+
+
+
+    <!--<a mat-list-item routerLinkActive="active"-->
+       <!--[routerLinkActiveOptions]="{ exact: true }"-->
+       <!--routerLink="/dashboard">-->
+      <!--<mat-icon color="primary" class="mat-18">dashboard</mat-icon>-->
+      <!--My Dashboard-->
+    <!--</a>-->
+
+    <mat-expansion-panel  #profile [class.mat-elevation-z0]="!profile.expanded">
+      <mat-expansion-panel-header style="font-size: 16px;">
+        <mat-panel-title>
+          <mat-icon color="primary">reorder</mat-icon>
+          My profile
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-list dense class="mat-expansion-panel-body">
+
+
+        <a mat-list-item
+           routerLink="/dashboard">
+          <mat-icon class="mat-18">person</mat-icon>
+Profile
+        </a>
+        <a mat-list-item routerLinkActive="active"
+           [routerLinkActiveOptions]="{ exact: true }"
+           routerLink="/dashboard">
+          <mat-icon class="mat-18">person</mat-icon>
+Profile
+        </a>
+
+      </mat-list>
+    </mat-expansion-panel>
+  </mat-sidenav>
+
+  <div class="app-sidenav-content">
+    <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
+
+    <div class="wrapper">
+      <router-outlet></router-outlet>
+
+    </div>
+  </div>
+
+
+  <app-footer></app-footer>
+
+</mat-sidenav-container>
+
+

@@ -1,0 +1,90 @@
+<mat-card>
+  <!--<mat-card-header>-->
+  <!--<mat-icon class="mat-18">work</mat-icon>-->
+  <!--<mat-card-subtitle>Employee</mat-card-subtitle>-->
+  <!--</mat-card-header>-->
+  <form (ngSubmit)="onSubmit()" [formGroup]="employeeForm" novalidate>
+    <mat-card-content>
+      <div fxLayout="row wrap"
+           fxLayoutAlign="space-between center"
+           class="content"
+           fxLayout.lt-sm="column"
+           fxLayoutGap="2em">
+        <div class="blocks" fxFlex="15">
+          <mat-form-field appearance="outline">
+            <mat-label for="Title">First Name</mat-label>
+            <input matInput
+                   required="required"
+                   formControlName="FirstName">
+            <!--<mat-icon color="primary" matSuffix>sentiment_very_satisfied</mat-icon>-->
+            <!--<mat-hint>Hint</mat-hint>-->
+
+          </mat-form-field>
+        </div>
+        <div class="blocks" fxFlex="20">
+          <mat-form-field appearance="outline">
+            <mat-label for="MiddleName">Middle Name</mat-label>
+            <input matInput
+                   required="required"
+                   formControlName="MiddleName">
+            <!--<mat-icon color="primary" matSuffix>sentiment_very_satisfied</mat-icon>-->
+            <!--<mat-hint>Hint</mat-hint>-->
+          </mat-form-field>
+        </div>
+        <div class="blocks" fxFlex="20">
+          <mat-form-field appearance="outline">
+            <mat-label for="FatherName">Father Name</mat-label>
+            <input matInput
+                   required="required"
+                   formControlName="FatherName">
+            <!--<mat-icon color="primary" matSuffix>sentiment_very_satisfied</mat-icon>-->
+            <!--<mat-hint>Hint</mat-hint>-->
+
+          </mat-form-field>
+        </div>
+        <div class="blocks" fxFlex="20">
+          <mat-form-field appearance="outline">
+            <mat-label for="Department">Department</mat-label>
+            <input matInput
+                   required="required"
+                   formControlName="Department">
+            <!--<mat-icon color="primary" matSuffix>sentiment_very_satisfied</mat-icon>-->
+            <!--<mat-hint>Hint</mat-hint>-->
+
+          </mat-form-field>
+        </div>
+
+      </div>
+    </mat-card-content>
+  </form>
+  <mat-card-actions style="margin-top: 30px;padding: auto;" fxLayoutAlign="center">
+    <mat-divider></mat-divider>
+
+    <div fxLayout="row" fxLayoutAlign="center center"
+         class="content"
+         fxLayout.lt-sm="column"
+         fxLayoutGap="5em">
+      <div style="padding-top: 20px;"
+           class="block" fxFlex="">
+        <button mat-flat-button color="primary">
+          <mat-icon class="mat-18">save</mat-icon>
+          save
+        </button>
+
+      </div>
+      <div style="padding-top: 20px;"
+           class="block" fxFlex="">
+        <button (click)="close()" mat-flat-button color="warn">
+          <mat-icon class="mat-18">close</mat-icon>
+          close
+        </button>
+
+      </div>
+
+    </div>
+
+  </mat-card-actions>
+
+
+</mat-card>
+
