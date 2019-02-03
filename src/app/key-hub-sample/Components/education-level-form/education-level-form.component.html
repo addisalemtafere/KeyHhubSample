@@ -20,7 +20,7 @@
         <mat-form-field appearance="outline">
           <mat-label>Education Level :</mat-label>
           <mat-select formControlName="EducationLevelId">
-            <mat-option *ngFor="let level of eduLevels" [value]="level.EducationLevelId">
+            <mat-option *ngFor="let level of eduLevels" [value]="level.Id">
               {{level.Name}}
             </mat-option>
           </mat-select>
@@ -64,5 +64,7 @@
     </div>
 
   </mat-dialog-actions>
+
+  <pre>{{educationLevelForm.value | json}}</pre>
 </form>
 

@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource, MatDialogConfig, MatDialog, MatDialogRef} from '@angular/material';
 import {EducationLevelFormComponent} from '../education-level-form/education-level-form.component';
+import {EducationLevelModel} from '../../model/education-level.model';
 
 @Component({
   selector: 'app-education-level',
@@ -38,16 +39,9 @@ export class EducationLevelComponent implements OnInit {
 
 }
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, Name: 'Master', EndingYear: '12/2/2019'},
-  {position: 2, Name: 'Master', EndingYear: '12/2/2019'},
-  {position: 3, Name: 'Master', EndingYear: '12/2/2019'},
+const ELEMENT_DATA: EducationLevelModel[] = [
+  {EducationLevelId: 1, Name: 'Master', EndingYear: '12/2/2019'},
+  {EducationLevelId: 2, Name: 'Master', EndingYear: '12/2/2019'},
+  {EducationLevelId: 3, Name: 'Master', EndingYear: '12/2/2019'},
 
 ];
