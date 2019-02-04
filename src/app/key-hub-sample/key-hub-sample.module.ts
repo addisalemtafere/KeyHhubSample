@@ -12,7 +12,6 @@ import {KeyHubSampleComponent} from './components/key-hub-sample/key-hub-sample.
 import {EmployeeComponent} from './components/employee/employee.component';
 import {EducationLevelComponent} from './components/education-level/education-level.component';
 import {EducationLevelFormComponent} from './components/education-level-form/education-level-form.component';
-import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   {

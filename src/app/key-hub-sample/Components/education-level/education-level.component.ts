@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatTableDataSource, MatDialogConfig, MatDialog, MatDialogRef} from '@angular/material';
+import {MatDialog, MatDialogConfig, MatPaginator, MatTableDataSource} from '@angular/material';
 import {EducationLevelFormComponent} from '../education-level-form/education-level-form.component';
 import {EducationLevelModel} from '../../model/education-level.model';
 
@@ -10,7 +10,7 @@ import {EducationLevelModel} from '../../model/education-level.model';
 })
 export class EducationLevelComponent implements OnInit {
   displayedColumns: string[] = ['position', 'EducationLevel', 'EndingYear'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource = new MatTableDataSource<EducationLevelModel>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -26,14 +26,10 @@ export class EducationLevelComponent implements OnInit {
 
 
   addEducationLevel() {
-
-
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.data = {
       anyData: 111,
     };
-
     this.dialog.open(EducationLevelFormComponent, dialogConfig);
   }
 

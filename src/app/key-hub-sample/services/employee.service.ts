@@ -1,11 +1,9 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {EmployeeModel} from '../model/employee.model';
 import {Observable} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {ConfigService} from '../config/config.service';
-import {PeriodicElement} from '../Components/education-level/education-level.component';
-import {DepartmentModel} from '../model/department.model';
 
 @Injectable({
   providedIn: 'root'

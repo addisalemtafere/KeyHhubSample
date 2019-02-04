@@ -18,7 +18,12 @@
                    formControlName="FirstName">
             <!--<mat-icon color="primary" matSuffix>sentiment_very_satisfied</mat-icon>-->
             <!--<mat-hint>Hint</mat-hint>-->
+            <mat-error *ngIf="f.FirstName && (f.FirstName.dirty || f.FirstName.touched)">
+              <div *ngIf="f.FirstName.errors.required">First Name is required</div>
+              <div *ngIf="f.FirstName.errors.minlength">First Name must be at least 6 characters</div>
+              <div *ngIf="f.FirstName.errors.pattern"> First Name not valid.</div>
 
+            </mat-error>
           </mat-form-field>
         </div>
         <div class="blocks" fxFlex="20">
@@ -29,6 +34,10 @@
                    formControlName="MiddleName">
             <!--<mat-icon color="primary" matSuffix>sentiment_very_satisfied</mat-icon>-->
             <!--<mat-hint>Hint</mat-hint>-->
+            <mat-error *ngIf="f.MiddleName.invalid && (f.MiddleName.dirty || f.MiddleName.touched)">
+              <div *ngIf="f.MiddleName.errors.required">Middle Name is required</div>
+              <div *ngIf="f.MiddleName.errors.minlength">Middle Name must be at least 6 characters</div>
+            </mat-error>
           </mat-form-field>
         </div>
         <div class="blocks" fxFlex="20">
@@ -39,6 +48,10 @@
                    formControlName="FatherName">
             <!--<mat-icon color="primary" matSuffix>sentiment_very_satisfied</mat-icon>-->
             <!--<mat-hint>Hint</mat-hint>-->
+            <mat-error *ngIf="f.FatherName && (f.FatherName.dirty || f.FatherName.touched)">
+              <div *ngIf="f.FatherName.errors.required">FatherName Name is required</div>
+              <div *ngIf="f.FatherName.errors.minlength">FatherName must be at least 6 characters</div>
+            </mat-error>
 
           </mat-form-field>
         </div>
@@ -50,6 +63,9 @@
                 {{dep.DepartmentName}}
               </mat-option>
             </mat-select>
+            <mat-error *ngIf="f.DepartmentId && (f.DepartmentId.dirty || f.DepartmentId.touched)">
+              <div *ngIf="f.DepartmentId.errors.required">Department is required</div>
+            </mat-error>
           </mat-form-field>
         </div>
 
@@ -65,7 +81,7 @@
            fxLayoutGap="5em">
         <div style="padding-top: 20px;"
              class="block" fxFlex="">
-          <button type="submit" mat-flat-button color="primary">
+          <button *ngIf="employeeForm.invalid" type="submit" mat-flat-button color="primary">
             <mat-icon class="mat-18">save</mat-icon>
             Save
           </button>
